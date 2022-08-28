@@ -29,19 +29,29 @@ apt install -y erlang
 
 ### 编译
 
+下载
+
 ```sh
 git clone https://github.com/signalwire/freeswitch.git -bv1.10 freeswitch
 cd freeswitch
 git config pull.rebase true
+```
 
+配置
+
+```sh
 ./bootstrap.sh -j
 ./configure --prefix=/home/mmc/fs_bin
 ```
+
+开启 erlang 的支持
 
 ```sh
 vim modules.conf
 event_handlers/mod_erlang_event
 ```
+
+make
 
 ```sh
 make
