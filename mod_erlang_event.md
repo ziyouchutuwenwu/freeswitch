@@ -38,11 +38,16 @@ vim autoload_configs/erlang_event.conf.xml
 ```sh
 erl -name aaa@127.0.0.1 -setcookie 123456
 net_kernel:connect_node('fs@127.0.0.1').
+nodes(hidden).
 ```
+
+查看所有的 erlang 节点
 
 ```sh
 epmd -names
 ```
+
+fs_cli 内查看状态
 
 ```sh
 erlang status
