@@ -44,7 +44,7 @@ git config pull.rebase true
 ./configure --prefix=/home/mmc/fs_bin
 ```
 
-开启 erlang 的支持
+开启 `mod_erlang_event` 的模块编译
 
 ```sh
 vim modules.conf

@@ -4,6 +4,8 @@
 
 ### 编译的时候开启支持
 
+间安装步骤
+
 ### 启动开启模块支持
 
 ```sh
@@ -21,14 +23,16 @@ vim autoload_configs/erlang_event.conf.xml
 ```
 
 ```xml
-<settings>
-  <param name="listen-ip" value="0.0.0.0"/>
-  <param name="listen-port" value="8031"/>
-  <param name="nodename" value="fs@127.0.0.1"/>
-  <param name="cookie" value="123456"/>
-  <param name="shortname" value="false"/>
-  <param name="encoding" value="binary"/>
-</settings>
+<configuration name="erlang_event.conf" description="Erlang Socket Client">
+  <settings>
+    <param name="listen-ip" value="0.0.0.0"/>
+    <param name="listen-port" value="8031"/>
+    <param name="nodename" value="fs@127.0.0.1"/>
+    <param name="cookie" value="123456"/>
+    <param name="shortname" value="false"/>
+    <param name="encoding" value="binary"/>
+  </settings>
+</configuration>
 ```
 
 ## 调试
