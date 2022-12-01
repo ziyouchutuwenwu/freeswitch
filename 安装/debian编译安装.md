@@ -57,3 +57,10 @@ make
 make
 make install
 ```
+
+### 运行
+
+```sh
+freeswitch -nc -nonat
+fs_cli -rRS
+```
