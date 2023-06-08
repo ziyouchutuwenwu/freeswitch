@@ -41,7 +41,7 @@ git config pull.rebase true
 
 ```sh
 ./bootstrap.sh -j
-./configure --prefix=/home/mmc/fs_bin
+./configure --prefix=$HOME/fs_bin
 ```
 
 开启 `mod_erlang_event` 的模块编译
@@ -61,6 +61,6 @@ make install
 ### 运行
 
 ```sh
-freeswitch -nc -nonat
-fs_cli -rRS
+bin/freeswitch -nc -nonat
+bin/fs_cli -rRS
 ```
