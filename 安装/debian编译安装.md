@@ -14,13 +14,13 @@ echo "machine freeswitch.signalwire.com login signalwire password $TOKEN" > /etc
 chmod 600 /etc/apt/auth.conf
 echo "deb [signed-by=/usr/share/keyrings/signalwire-freeswitch-repo.gpg] https://freeswitch.signalwire.com/repo/deb/debian-release/ `lsb_release -sc` main" > /etc/apt/sources.list.d/freeswitch.list
 echo "deb-src [signed-by=/usr/share/keyrings/signalwire-freeswitch-repo.gpg] https://freeswitch.signalwire.com/repo/deb/debian-release/ `lsb_release -sc` main" >> /etc/apt/sources.list.d/freeswitch.list
-apt update
+apt update; apt upgrade -y
 ```
 
 ### 安装编译依赖
 
 ```sh
-apt build-dep freeswitch
+apt build-dep freeswitch -y
 ```
 
 ```sh
@@ -44,7 +44,7 @@ git config pull.rebase true
 ./configure --prefix=$HOME/fs_bin
 ```
 
-开启 `mod_erlang_event` 的模块编译
+根据需求开启 `mod_erlang_event` 的模块编译
 
 ```sh
 vim modules.conf
@@ -60,7 +60,12 @@ make install
 
 ### 运行
 
+启动前参考[基本配置](../%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.md)
+
 ```sh
 bin/freeswitch -nc -nonat
 bin/fs_cli -rRS
+
+# 查看版本
+bin/fs_cli -x version
 ```
