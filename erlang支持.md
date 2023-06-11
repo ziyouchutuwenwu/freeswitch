@@ -9,7 +9,7 @@
 ### 启动开启模块支持
 
 ```sh
-vim autoload_configs/modules.conf.xml
+vim etc/freeswitch/autoload_configs/modules.conf.xml
 ```
 
 ```xml
@@ -19,7 +19,7 @@ vim autoload_configs/modules.conf.xml
 ### 配置 erlang 节点信息
 
 ```sh
-vim autoload_configs/erlang_event.conf.xml
+vim etc/freeswitch/autoload_configs/erlang_event.conf.xml
 ```
 
 ```xml
@@ -27,7 +27,7 @@ vim autoload_configs/erlang_event.conf.xml
   <settings>
     <param name="listen-ip" value="0.0.0.0"/>
     <param name="listen-port" value="8031"/>
-    <param name="nodename" value="fs@127.0.0.1"/>
+    <param name="nodename" value="fs@192.168.56.11"/>
     <param name="cookie" value="123456"/>
     <!-- 短名字不支持 ip, 所以用 long name -->
     <param name="shortname" value="false"/>
@@ -42,7 +42,7 @@ vim autoload_configs/erlang_event.conf.xml
 
 ```sh
 erl -sname aaa@127.0.0.1 -setcookie 123456
-net_kernel:connect_node('fs@127.0.0.1').
+net_kernel:connect_node('fs@192.168.56.11').
 nodes(hidden).
 ```
 
