@@ -32,7 +32,7 @@ apt install -y erlang
 下载
 
 ```sh
-git clone https://github.com/signalwire/freeswitch.git -bv1.10 freeswitch
+git clone https://github.com/signalwire/freeswitch.git -bv1.10 freeswitch --depth=1
 cd freeswitch
 git config pull.rebase true
 ```
