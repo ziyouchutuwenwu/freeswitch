@@ -47,8 +47,7 @@ git config pull.rebase true
 根据需求开启 `mod_erlang_event` 的模块编译
 
 ```sh
-vim modules.conf
-event_handlers/mod_erlang_event
+sed -i 's|#event_handlers/mod_erlang_event|event_handlers/mod_erlang_event|g' modules.conf
 ```
 
 make
