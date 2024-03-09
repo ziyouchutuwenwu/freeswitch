@@ -40,11 +40,10 @@ git config pull.rebase true
 配置
 
 ```sh
-./bootstrap.sh -j
-./configure --prefix=$HOME/fs_bin
+./bootstrap.sh -j; ./configure --prefix=$HOME/fs_bin
 ```
 
-根据需求开启 `mod_erlang_event` 的模块编译
+开启 erlang 支持
 
 ```sh
 sed -i 's|#event_handlers/mod_erlang_event|event_handlers/mod_erlang_event|g' modules.conf
@@ -63,7 +62,7 @@ make install
 
 ```sh
 bin/freeswitch -nc -nonat
-bin/fs_cli -rRS
+bin/fs_cli -H 10.0.2.15 -p 123456 -rRS
 
 # 查看版本
 bin/fs_cli -x version
