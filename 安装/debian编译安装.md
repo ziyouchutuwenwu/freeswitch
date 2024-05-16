@@ -37,10 +37,10 @@ cd freeswitch
 git config pull.rebase true
 ```
 
-配置
+先运行 bootstrap, 生成 modules.conf
 
 ```sh
-./bootstrap.sh -j; ./configure --prefix=$HOME/fs_bin
+./bootstrap.sh -j
 ```
 
 开启 erlang 支持
@@ -52,18 +52,19 @@ sed -i 's|#event_handlers/mod_erlang_event|event_handlers/mod_erlang_event|g' mo
 make
 
 ```sh
+./configure --prefix=/usr/local
 make
-make install
+sudo make install
 ```
 
 ### 运行
 
-启动前参考[基本配置](../%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.md)
+启动前参考[基本配置](../基本配置.md)
 
 ```sh
-bin/freeswitch -nc -nonat
-bin/fs_cli -H 10.0.2.15 -p 123456 -rRS
+freeswitch -nc -nonat
+fs_cli -H 10.0.2.15 -p 123456 -rRS
 
 # 查看版本
-bin/fs_cli -x version
+fs_cli -x version
 ```

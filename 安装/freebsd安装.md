@@ -19,7 +19,7 @@ cd /usr/local/share/examples/freeswitch/vanilla/ && pax -rw -p e . /usr/local/et
 
 ### 修改基本配置
 
-参考 [基本配置](./%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.md)
+参考 [基本配置](../基本配置.md)
 
 ### 启动
 

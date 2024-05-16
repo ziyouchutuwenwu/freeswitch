@@ -9,7 +9,7 @@
 ### 运行期支持
 
 ```sh
-etc/freeswitch/autoload_configs/modules.conf.xml
+/usr/local/etc/freeswitch/autoload_configs/modules.conf.xml
 ```
 
 ```xml
@@ -19,7 +19,7 @@ etc/freeswitch/autoload_configs/modules.conf.xml
 ### 配置 erlang 节点信息
 
 ```sh
-etc/freeswitch/autoload_configs/erlang_event.conf.xml
+/usr/local/etc/freeswitch/autoload_configs/erlang_event.conf.xml
 ```
 
 ```xml
