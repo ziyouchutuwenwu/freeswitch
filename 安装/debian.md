@@ -31,9 +31,7 @@ apt install -y erlang
 
 ```sh
 cd /usr/src/
-# git clone https://github.com/signalwire/freeswitch.git -bv1.10 freeswitch --depth=1
 git clone -b v1.10 https://github.com/signalwire/freeswitch.git --depth=1
-
 cd freeswitch
 git config pull.rebase true
 ```
@@ -41,7 +39,7 @@ git config pull.rebase true
 先运行 bootstrap, 生成 modules.conf
 
 ```sh
-./bootstrap.sh -j
+./bootstrap.sh -j$(nproc)
 ```
 
 开启 erlang 支持

@@ -13,11 +13,8 @@ erlang 的支持，也能用于 elixir
 ### 运行期
 
 ```sh
-/usr/local/etc/freeswitch/autoload_configs/modules.conf.xml
-```
-
-```xml
-<load module="mod_erlang_event"/>
+sudo sed -i '/mod_erlang_event/s/<!-- *\(.*mod_erlang_event.*\) *-->/\1/' /usr/local/etc/freeswitch/autoload_configs/modules.conf.xml
+cat /usr/local/etc/freeswitch/autoload_configs/modules.conf.xml | rg mod_erlang_event
 ```
 
 ### 配置节点
@@ -33,7 +30,7 @@ erlang 的支持，也能用于 elixir
 ```xml
 <configuration name="erlang_event.conf" description="Erlang Socket Client">
   <settings>
-    <param name="listen-ip" value="0.0.0.0"/>
+    <param name="listen-ip" value="$${local_ip_v4}"/>
     <param name="listen-port" value="8031"/>
     <!-- longname 的 value 里面必须带 ip -->
     <param name="nodename" value="fs@10.0.2.15"/>
