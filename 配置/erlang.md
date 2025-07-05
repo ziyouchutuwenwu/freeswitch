@@ -42,6 +42,28 @@ cat /usr/local/etc/freeswitch/autoload_configs/modules.conf.xml | rg mod_erlang_
 </configuration>
 ```
 
+### 拨号计划
+
+配置以后，打电话的时候，fs 会主调 erlang 节点
+
+```sh
+/usr/local/etc/freeswitch/dialplan/default/erlang.xml
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<include>
+  <context name="erlang">
+    <extension name="catch all extension">
+      <condition field="destination_number" expression="^.*$">
+        <action application="set" data="queue=${destination_number}"/>
+        <action application="erlang" data="fs_call_sup:! iex@10.0.2.1"/>
+      </condition>
+    </extension>
+  </context>
+</include>
+```
+
 ## 测试连接
 
 查看启动的 erl 节点
