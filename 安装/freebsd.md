@@ -1,4 +1,6 @@
-# freebsd 安装
+# freebsd
+
+## 说明
 
 freebsd 直接带包，比较方便
 

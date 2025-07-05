@@ -1,12 +1,16 @@
-# erlang 支持
+# erlang
+
+## 说明
+
+erlang 的支持，也能用于 elixir
 
 ## 步骤
 
-### 编译期支持
+### 编译期
 
 见安装步骤
 
-### 运行期支持
+### 运行期
 
 ```sh
 /usr/local/etc/freeswitch/autoload_configs/modules.conf.xml
@@ -16,7 +20,11 @@
 <load module="mod_erlang_event"/>
 ```
 
-### 配置 erlang 节点信息
+### 配置节点
+
+配置的是 erlang 的节点
+
+和 event socket 无关
 
 ```sh
 /usr/local/etc/freeswitch/autoload_configs/erlang_event.conf.xml
@@ -27,6 +35,7 @@
   <settings>
     <param name="listen-ip" value="0.0.0.0"/>
     <param name="listen-port" value="8031"/>
+    <!-- longname 的 value 里面必须带 ip -->
     <param name="nodename" value="fs@10.0.2.15"/>
     <param name="cookie" value="123456"/>
     <!-- 短名字不支持 ip, 所以用 long name -->
